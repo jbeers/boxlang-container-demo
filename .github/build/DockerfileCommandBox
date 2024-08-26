@@ -1,7 +1,0 @@
-FROM ortussolutions/commandbox:boxlang
-
-COPY ./app /app
-
-RUN box install
-
-RUN ${BUILD_DIR}/util/warmup-server.sh

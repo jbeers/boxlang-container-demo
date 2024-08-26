@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Copyright 2005-2007 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
  * www.ortussolutions.com
  * ---
@@ -20,6 +20,18 @@ component {
 	this.secureJSON           = false;
 	this.timezone             = "UTC";
 	this.whiteSpaceManagement = "smart";
+
+	/**
+	 * --------------------------------------------------------------------------
+	 * Java Integration
+	 * --------------------------------------------------------------------------
+	 * Modify only if you need to, else default them: https://cfdocs.org/application-cfc
+	 */
+	this.javaSettings = {
+		loadPaths               : [ expandPath( "./lib/java" ) ],
+		loadColdFusionClassPath : true,
+		reloadOnChange          : false
+	};
 
 	/**
 	 * --------------------------------------------------------------------------

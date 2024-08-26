@@ -32,7 +32,7 @@ component {
 			sessionEndHandler        : "",
 			missingTemplateHandler   : "",
 			// Extension Points
-			applicationHelper        : "",
+			applicationHelper        : "includes/helpers/ApplicationHelper.cfm",
 			viewsHelper              : "",
 			modulesExternalLocation  : [],
 			viewsExternalLocation    : "",

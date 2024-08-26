@@ -22,9 +22,11 @@
 
 ----
 
-# Super Simple Application Template
+# ColdBox Elixir Application Template
 
-The simplest of all application templates. Bare bones, but with tests :)
+This template can be your starting ground for your modern ColdFusion (cfml) web applications.  You must use [CommandBox](http://www.ortussolutions.com/products/commandbox) to track your dependencies and start embedded servers.
+
+This template leverages ColdBox and the (ColdBox Elixir)[https://coldbox-elixir.ortusbooks.com] project for asset management and compilations.  You can place all your static assets in the `resources/assets` folder and Elixir will combine, version, copy, and even babelify your code to their appropriate location in the `includes` folder.
 
 ## Quick Installation
 
@@ -41,6 +43,28 @@ box server start
 ```
 
 Code to your liking and enjoy!
+
+## Dockerfile
+
+We have included a [`build/Dockerfile`](build/Dockerfile) so you can build docker containers from your source code.  We have also added two scripts in your `box.json` so you can build the docker image and run the docker image using our [CommandBox Docker](https://hub.docker.com/r/ortussolutions/commandbox) containers.
+
+```bash
+# Build a docker **container**
+run-script docker:build
+# Run the container
+run-script docker:run
+# Go into the container's bash prompt
+run-script docker:bash
+```
+
+## Docker Compose Stack
+
+We have included a [`build/docker-compose.yaml`](build/docker-compose.yml) stack that can be used to run the application in a container alongside a database.  We have included support for MySQL, PostgreSQL and MSSQL.  We have also included the `run-script docker:stack` command you so you compose the stack up or down.
+
+```bash
+run-script docker:stack up
+run-script docker:stack down
+```
 
 ## VSCode Helpers
 
@@ -76,6 +100,7 @@ ColdBox *Hierarchical* MVC is the de-facto enterprise-level [HMVC](https://en.wi
 ## Learning ColdBox
 
 ColdBox is the defacto standard for building modern ColdFusion (CFML) applications.  It has the most extensive [documentation](https://coldbox.ortusbooks.com) of all modern web application frameworks.
+
 
 If you don't like reading so much, then you can try our video learning platform: [CFCasts (www.cfcasts.com)](https://www.cfcasts.com)
 

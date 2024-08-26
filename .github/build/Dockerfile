@@ -1,7 +1,15 @@
-ARG BASE_IMAGE=ortussolutions/boxlang:miniserver
+FROM ortussolutions/commandbox:jdk21-snapshot
 
-FROM ${BASE_IMAGE}
+ENV BOX_SERVER_APP_CFENGINE=boxlang@1.0.0-beta11+15
+
+RUN box upgrade --force --latest
+
+RUN ${BUILD_DIR}/util/warmup-server.sh
+
+RUN box install commandbox-boxlang,bx-compat,bx-esapi,bx-pdf
 
 COPY ./app /app
 
-ENV BOXLANG_MODULES="bx-compat,bx-esapi"
+COPY ./.github/build/server.json /app/server.json
+
+
