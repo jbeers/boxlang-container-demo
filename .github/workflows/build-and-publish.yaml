@@ -5,13 +5,20 @@ on:
 env:
   DOCKER_IMAGE_NAME: boxlang-demo
 
+permissions: 
+  contents: read
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-        
+
       - name: Setup vars
         id: vars
         run: |
