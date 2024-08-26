@@ -1,44 +1,45 @@
 {
-    "name": "Super Simple APP Template",
-    "version": "7.1.0",
-    "author": "You",
-    "location": "forgeboxStorage",
-    "slug": "cbtemplate-supersimple",
-    "createPackageDirectory": false,
-    "type": "mvc",
-    "keywords": "",
-    "homepage": "",
-    "documentation": "",
-    "repository": {
-        "type": "",
-        "url": ""
+    "name":"Super Simple APP Template",
+    "version":"7.1.0",
+    "author":"You",
+    "location":"forgeboxStorage",
+    "slug":"cbtemplate-supersimple",
+    "createPackageDirectory":false,
+    "type":"mvc",
+    "keywords":"",
+    "homepage":"",
+    "documentation":"",
+    "repository":{
+        "type":"",
+        "url":""
     },
-    "bugs": "",
-    "shortDescription": "",
-    "contributors": [ ],
-    "ignore": [ ],
-    "devDependencies": {
-        "testbox": "be",
-        "commandbox-dotenv": "*",
-        "commandbox-cfconfig": "*",
-        "commandbox-cfformat": "*"
+    "bugs":"",
+    "shortDescription":"",
+    "contributors":[],
+    "ignore":[],
+    "devDependencies":{
+        "testbox":"be",
+        "commandbox-dotenv":"*",
+        "commandbox-cfconfig":"*",
+        "commandbox-cfformat":"*"
     },
-    "installPaths": {
-        "coldbox": "coldbox/",
-        "testbox": "testbox/"
+    "installPaths":{
+        "coldbox":"coldbox/",
+        "testbox":"testbox/",
+        "bx-compat":"C:/Users/jacob/.CommandBox/server/C652561282EAB054B4764A0EA08AF988-boxlang-coldbox/boxlang-1.0.0-beta10.14/WEB-INF/boxlang/modules/bx-compat/"
     },
-    "dependencies": {
-        "coldbox": "be",
-        "bx-compat": "*",
-        "bx-esapi": "*"
+    "dependencies":{
+        "coldbox":"^7.3.0+16",
+        "bx-compat":"^1.2.0+5",
+        "bx-esapi":"*"
     },
-    "scripts": {
-        "postInstall": "pathExists .env || cp .env.example .env && package set ignore=[]",
-        "format": "cfformat run config/,handlers/,interceptors/,models/,modules_app/,tests/specs/,*.cfc ./.cfformat.json --overwrite",
-        "format:check": "cfformat check config/,handlers/,interceptors/,models/,modules_app/,tests/specs/,*.cfc ./.cfformat.json",
-        "format:watch": "cfformat watch path='config/,handlers/,interceptors/,models/,modules_app/,tests/specs/,*.cfc' settingsPath='.cfformat.json'"
+    "scripts":{
+        "postInstall":"pathExists .env || cp .env.example .env && package set ignore=[]",
+        "format":"cfformat run config/,handlers/,interceptors/,models/,modules_app/,tests/specs/,*.cfc ./.cfformat.json --overwrite",
+        "format:check":"cfformat check config/,handlers/,interceptors/,models/,modules_app/,tests/specs/,*.cfc ./.cfformat.json",
+        "format:watch":"cfformat watch path='config/,handlers/,interceptors/,models/,modules_app/,tests/specs/,*.cfc' settingsPath='.cfformat.json'"
     },
-    "testbox": {
-        "runner": "/tests/runner.cfm"
+    "testbox":{
+        "runner":"/tests/runner.cfm"
     }
 }
