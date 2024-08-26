@@ -12,4 +12,6 @@ COPY ./app /app
 
 COPY ./.github/build/server.json /app/server.json
 
+RUN /bin/bash -c "$(curl -fsSL https://downloads.ortussolutions.com/ortussolutions/boxlang/install-boxlang.sh)"
 
+RUN boxlang --home /usr/local/lib/serverHome/WEB-INF/boxlang compile --source /app/ --target /app/ --basePath /app
